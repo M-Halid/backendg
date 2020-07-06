@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "build": "[my-framework] build --output public"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -28,5 +27,5 @@
   "bugs": {
     "url": "https://github.com/M-Halid/backendgame/issues"
   },
-  "description": ""
+  "description": "Hey"
 }

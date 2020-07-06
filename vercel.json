@@ -1,5 +1,4 @@
 {
-    "name": "server",
     "version": 2,
     "env": {
         "MONGODB_URI": "@server"

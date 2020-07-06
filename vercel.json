@@ -1,0 +1,11 @@
+{
+    "routes": [
+        {
+            "src": "/.*",
+            "dest": "index.js"
+        }
+    ],
+    "env": {
+        "MONGO_URI": "@newone"
+    }
+}

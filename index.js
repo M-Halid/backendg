@@ -7,7 +7,7 @@ const db = monk(process.env.MONGO_URI || "localhost/Scores")
 const GameScores = db.get("GameScores")
 
 
-
+app.enable('trust proxy');
 
 app.use(cors())
 app.use(express.json())

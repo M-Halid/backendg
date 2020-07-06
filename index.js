@@ -1,7 +1,10 @@
+const cool = require('cool-ascii-faces');
 const express = require("express")
 const cors = require("cors")
 const monk = require("monk")
 const app = express()
+const PORT = process.env.PORT || 5000
+const path = require('path');
 
 const db = monk(process.env.MONGODB_URI || "localhost/Scores")
 const GameScores = db.get("GameScores")
@@ -52,7 +55,9 @@ app.post("/score", (req, res) => {
 }
 )
 
-app.listen(5000, () => {
-    console.log("Listening on http://localhost:5000");
-
-})
+    .use(express.static(path.join(__dirname, 'public')))
+    .set('views', path.join(__dirname, 'views'))
+    .set('view engine', 'ejs')
+    .get('/', (req, res) => res.render('pages/index'))
+    .get('/cool', (req, res) => res.send(cool()))
+    .listen(PORT, () => console.log(`Listening on ${PORT}`));

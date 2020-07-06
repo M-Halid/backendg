@@ -3,10 +3,10 @@ const cors = require("cors")
 const monk = require("monk")
 const app = express()
 
-const PORT = "https://my-app.m-halid.vercel.app/"
+// const PORT = "https://tryithalid.herokuapp.com//"
 
-const db = monk(process.env.MONGODB_URI || "localhost/Scores")
-const GameScores = db.get("GameScores")
+const db = monk(process.env.MONGODB_URI || "localhost/score")
+const score = db.get("score")
 
 
 app.enable('trust proxy');
@@ -16,20 +16,17 @@ app.use(express.json())
 
 app.get("/", (req, res) => {
     res.json({
-        message: "Miyaw heyyo hey🐈"
+        message: "Miyaw aspist heyyo hey🐈"
     })
 })
 
-// function isValidMew(mew) {
-//     return mew.name && mew.name.toString().trim() !== "" &&
-//         mew.content && mew.content.toString().trim() !== ""
-// }
+
 
 app.get("/score", (req, res) => {
-    GameScores
+    score
         .find()
-        .then(scores => {
-            res.json(scores)
+        .then(score => {
+            res.json(score)
         })
 })
 
@@ -43,7 +40,7 @@ app.post("/score", (req, res) => {
         Created: new Date()
     }
 
-    GameScores
+    score
         .insert(data)
         .then(createdScore => {
             res.json(createdScore)
@@ -54,7 +51,12 @@ app.post("/score", (req, res) => {
 }
 )
 
-app.listen(PORT, () => {
+app.listen(5000, () => {
     console.log("Listening on http://localhost:5000");
 
 })
+
+// app.listen(PORT, () => {
+//     console.log("Listening on http://localhost:PORT");
+
+// })

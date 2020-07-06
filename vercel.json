@@ -1,11 +1,7 @@
 {
-    "routes": [
-        {
-            "src": "/.*",
-            "dest": "index.js"
-        }
-    ],
+    "name": "server",
+    "version": 2,
     "env": {
-        "MONGO_URI": "@newone"
+        "MONGODB_URI": "@server"
     }
 }

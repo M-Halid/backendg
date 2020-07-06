@@ -1,11 +1,11 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "[my-framework] build --output public"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +20,13 @@
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
-  "homepage": ""
+  "homepage": "https://github.com/M-Halid/backendgame#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-Halid/backendgame.git"
+  },
+  "bugs": {
+    "url": "https://github.com/M-Halid/backendgame/issues"
+  },
+  "description": ""
 }

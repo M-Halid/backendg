@@ -3,7 +3,7 @@ const cors = require("cors")
 const monk = require("monk")
 const app = express()
 
-const db = monk(process.env.MONGO_URI || "localhost/Scores")
+const db = monk(process.env.MONGODB_URI || "localhost/Scores")
 const GameScores = db.get("GameScores")
 
 

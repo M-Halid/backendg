@@ -16,7 +16,7 @@ app.use(express.json())
 
 app.get("/", (req, res) => {
     res.json({
-        message: "Miyaw aspist heyyo hey🐈"
+        message: "Miyaw hey🐈"
     })
 })
 

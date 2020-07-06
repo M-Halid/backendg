@@ -51,10 +51,11 @@ app.post("/score", (req, res) => {
 }
 )
 
-app.listen(5000, () => {
-    console.log("Listening on http://localhost:5000");
-
-})
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 5000;
+}
+app.listen(port);
 
 // app.listen(PORT, () => {
 //     console.log("Listening on http://localhost:PORT");

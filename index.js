@@ -51,7 +51,7 @@ app.post("/score", (req, res) => {
 }
 )
 
-let port = process.env.PORT;
+let port = process.env.port;
 if (port == null || port == "") {
     port = 5000;
 }

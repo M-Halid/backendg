@@ -14,15 +14,15 @@ app.enable('trust proxy');
 app.use(cors())
 app.use(express.json())
 
+// app.get("/", (req, res) => {
+//     res.json({
+//         message: "Miyaw hi haloo  heyyy🐈"
+//     })
+// })
+
+
+
 app.get("/", (req, res) => {
-    res.json({
-        message: "Miyaw hi haloo  heyyy🐈"
-    })
-})
-
-
-
-app.get("/score", (req, res) => {
     score
         .find()
         .then(score => {
@@ -31,7 +31,7 @@ app.get("/score", (req, res) => {
 })
 
 
-app.post("/score", (req, res) => {
+app.post("/", (req, res) => {
 
 
     const data = {

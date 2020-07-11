@@ -3,7 +3,7 @@ const cors = require("cors")
 const monk = require("monk")
 const app = express()
 
-// const PORT = "https://tryithalid.herokuapp.com//"
+
 
 const db = monk(process.env.MONGODB_URI || "localhost/score")
 const score = db.get("score")

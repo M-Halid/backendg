@@ -3,8 +3,7 @@ const cors = require("cors")
 const monk = require("monk")
 const app = express()
 
-
-let port = process.env.PORT;
+// const PORT = "https://tryithalid.herokuapp.com//"
 
 const db = monk(process.env.MONGODB_URI || "localhost/score")
 const score = db.get("score")
@@ -52,7 +51,7 @@ app.post("/score", (req, res) => {
 }
 )
 
-
+let port = process.env.PORT;
 if (port == null || port == "") {
     port = 5000;
 }

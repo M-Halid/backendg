@@ -23,7 +23,7 @@
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
-  "homepage": "https://github.com/M-Halid/backendg",
+  "homepage": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/M-Halid/backendg.git"

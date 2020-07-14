@@ -50,14 +50,9 @@ app.post("/score", (req, res) => {
 }
 )
 
-let port = 'https://halidgame.herokuapp.com'
-    ;
-if (port == null || port == "") {
-    port = 5000;
-}
-app.listen(port);
+let PORT = process.env.PORT;
 
-// app.listen(PORT, () => {
-//     console.log("Listening on http://localhost:PORT");
+app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`))
 
-// })
+
+

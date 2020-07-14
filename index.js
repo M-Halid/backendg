@@ -50,7 +50,7 @@ app.post("/score", (req, res) => {
 }
 )
 
-let port = 'https://halidgame.herokuapp.com/'
+let port = 'https://halidgame.herokuapp.com'
     ;
 if (port == null || port == "") {
     port = 5000;

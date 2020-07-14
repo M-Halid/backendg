@@ -3,9 +3,8 @@ const cors = require("cors")
 const monk = require("monk")
 const app = express()
 
-// const PORT = "https://tryithalid.herokuapp.com//"
 
-const db = monk(process.env.MONGODB_URI || "localhost/score")
+const db = monk('mongodb+srv://Halid:4534Mongo.@cluster0.7e6me.mongodb.net/score?retryWrites=true&w=majority')
 const score = db.get("score")
 
 
@@ -16,7 +15,7 @@ app.use(express.json())
 
 app.get("/", (req, res) => {
     res.json({
-        message: "Miyaw hi haloo  heyyy🐈"
+        message: "Miyaw hi haloo asd heyyy🐈"
     })
 })
 

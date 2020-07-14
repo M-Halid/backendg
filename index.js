@@ -13,7 +13,7 @@ app.enable('trust proxy');
 app.use(cors())
 app.use(express.json())
 
-app.get("/", (req, res) => {
+app.get("/score", (req, res) => {
     res.json({
         message: "Miyaw hi haloo asd heyyy🐈"
     })
@@ -21,16 +21,17 @@ app.get("/", (req, res) => {
 
 
 
-app.get("/score", (req, res) => {
+app.get("/", (req, res, next) => {
     score
         .find()
         .then(score => {
             res.json(score)
-        })
+            console.table(score)
+        }).catch(next);
 })
 
 
-app.post("/score", (req, res) => {
+const createScore = ("/", (req, res, next) => {
 
 
     const data = {
@@ -43,16 +44,17 @@ app.post("/score", (req, res) => {
         .insert(data)
         .then(createdScore => {
             res.json(createdScore)
-        })
+        }).catch(next);
 
 
 
 }
 )
 
-let PORT = 'process.env.PORT || 5000';
+app.post('/', createScore)
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`))
-
 
 

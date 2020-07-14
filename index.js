@@ -50,7 +50,7 @@ app.post("/score", (req, res) => {
 }
 )
 
-let PORT = process.env.PORT;
+let PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`))
 

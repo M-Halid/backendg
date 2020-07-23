@@ -4,7 +4,7 @@ const monk = require("monk")
 const app = express()
 
 
-const db = monk('mongodb+srv://Halid:4534Mongo.@cluster0.7e6me.mongodb.net/score?retryWrites=true&w=majority')
+const db = monk('mongodb+srv://Halid:Mongo4534.@cluster0.7e6me.mongodb.net/score?retryWrites=true&w=majority')
 const score = db.get("score")
 
 
@@ -27,7 +27,10 @@ app.get("/", (req, res, next) => {
         .then(score => {
             res.json(score)
             console.table(score)
-        }).catch(next);
+        }).catch((err) => {
+            console.log("Fehler:" + err)
+            next()
+        });
 })
 
 

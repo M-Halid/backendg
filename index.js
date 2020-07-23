@@ -31,7 +31,7 @@ app.get("/score", (req, res) => {
 
 
 
-app.get("/open", (req, res, next) => {
+app.get("/", (req, res, next) => {
     console.log("HI!")
 
     score
